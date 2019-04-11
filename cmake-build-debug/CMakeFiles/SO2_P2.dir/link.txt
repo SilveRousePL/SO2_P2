@@ -1,0 +1,1 @@
+/usr/bin/c++  -std=c++17 -pthread -lncurses -g   CMakeFiles/SO2_P2.dir/main.cpp.o  -o SO2_P2 
