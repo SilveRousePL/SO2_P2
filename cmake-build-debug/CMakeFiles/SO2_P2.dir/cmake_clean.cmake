@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/SO2_P2.dir/main.cpp.o"
+  "CMakeFiles/SO2_P2.dir/Philosopher.cpp.o"
+  "CMakeFiles/SO2_P2.dir/Printer.cpp.o"
   "SO2_P2.pdb"
   "SO2_P2"
 )

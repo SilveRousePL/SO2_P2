@@ -4,6 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/darek/Projects/SO2_P2/Philosopher.cpp" "/home/darek/Projects/SO2_P2/cmake-build-debug/CMakeFiles/SO2_P2.dir/Philosopher.cpp.o"
+  "/home/darek/Projects/SO2_P2/Printer.cpp" "/home/darek/Projects/SO2_P2/cmake-build-debug/CMakeFiles/SO2_P2.dir/Printer.cpp.o"
   "/home/darek/Projects/SO2_P2/main.cpp" "/home/darek/Projects/SO2_P2/cmake-build-debug/CMakeFiles/SO2_P2.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

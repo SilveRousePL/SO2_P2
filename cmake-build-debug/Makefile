@@ -123,6 +123,60 @@ SO2_P2/fast:
 	$(MAKE) -f CMakeFiles/SO2_P2.dir/build.make CMakeFiles/SO2_P2.dir/build
 .PHONY : SO2_P2/fast
 
+Philosopher.o: Philosopher.cpp.o
+
+.PHONY : Philosopher.o
+
+# target to build an object file
+Philosopher.cpp.o:
+	$(MAKE) -f CMakeFiles/SO2_P2.dir/build.make CMakeFiles/SO2_P2.dir/Philosopher.cpp.o
+.PHONY : Philosopher.cpp.o
+
+Philosopher.i: Philosopher.cpp.i
+
+.PHONY : Philosopher.i
+
+# target to preprocess a source file
+Philosopher.cpp.i:
+	$(MAKE) -f CMakeFiles/SO2_P2.dir/build.make CMakeFiles/SO2_P2.dir/Philosopher.cpp.i
+.PHONY : Philosopher.cpp.i
+
+Philosopher.s: Philosopher.cpp.s
+
+.PHONY : Philosopher.s
+
+# target to generate assembly for a file
+Philosopher.cpp.s:
+	$(MAKE) -f CMakeFiles/SO2_P2.dir/build.make CMakeFiles/SO2_P2.dir/Philosopher.cpp.s
+.PHONY : Philosopher.cpp.s
+
+Printer.o: Printer.cpp.o
+
+.PHONY : Printer.o
+
+# target to build an object file
+Printer.cpp.o:
+	$(MAKE) -f CMakeFiles/SO2_P2.dir/build.make CMakeFiles/SO2_P2.dir/Printer.cpp.o
+.PHONY : Printer.cpp.o
+
+Printer.i: Printer.cpp.i
+
+.PHONY : Printer.i
+
+# target to preprocess a source file
+Printer.cpp.i:
+	$(MAKE) -f CMakeFiles/SO2_P2.dir/build.make CMakeFiles/SO2_P2.dir/Printer.cpp.i
+.PHONY : Printer.cpp.i
+
+Printer.s: Printer.cpp.s
+
+.PHONY : Printer.s
+
+# target to generate assembly for a file
+Printer.cpp.s:
+	$(MAKE) -f CMakeFiles/SO2_P2.dir/build.make CMakeFiles/SO2_P2.dir/Printer.cpp.s
+.PHONY : Printer.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +213,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... SO2_P2"
 	@echo "... edit_cache"
+	@echo "... Philosopher.o"
+	@echo "... Philosopher.i"
+	@echo "... Philosopher.s"
+	@echo "... Printer.o"
+	@echo "... Printer.i"
+	@echo "... Printer.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

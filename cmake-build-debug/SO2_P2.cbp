@@ -82,6 +82,27 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/darek/Projects/SO2_P2/Fork.h">
+			<Option target="SO2_P2"/>
+		</Unit>
+		<Unit filename="/home/darek/Projects/SO2_P2/Helper.h">
+			<Option target="SO2_P2"/>
+		</Unit>
+		<Unit filename="/home/darek/Projects/SO2_P2/Philosopher.cpp">
+			<Option target="SO2_P2"/>
+		</Unit>
+		<Unit filename="/home/darek/Projects/SO2_P2/Philosopher.h">
+			<Option target="SO2_P2"/>
+		</Unit>
+		<Unit filename="/home/darek/Projects/SO2_P2/Printer.cpp">
+			<Option target="SO2_P2"/>
+		</Unit>
+		<Unit filename="/home/darek/Projects/SO2_P2/Printer.h">
+			<Option target="SO2_P2"/>
+		</Unit>
+		<Unit filename="/home/darek/Projects/SO2_P2/Table.h">
+			<Option target="SO2_P2"/>
+		</Unit>
 		<Unit filename="/home/darek/Projects/SO2_P2/main.cpp">
 			<Option target="SO2_P2"/>
 		</Unit>
