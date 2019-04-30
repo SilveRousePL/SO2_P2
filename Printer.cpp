@@ -14,29 +14,28 @@ Printer::~Printer() {
 
 void Printer::start() {
     bool finished = false;
-    while(!finished) {
+    while (!finished) {
         timeout(1);
         int option = getch();
-        std::lock_guard<std::mutex> lock_guard(print_mutex);
-        if(option == ' ') {
+        if (option == ' ') {
             channel.dinner_finished = true;
             status = "Finishing...                         ";
         }
-        if(channel.dinner_finished == true) {
+        if (channel.dinner_finished == true) {
             bool all_finished = true;
-            for(auto item : philosopher_finished) {
-                if(item == false) {
+            for (auto item : philosopher_finished) {
+                if (item == false) {
                     all_finished = false;
                     break;
                 }
             }
-            if(all_finished) {
+            if (all_finished) {
                 finished = true;
                 status = "Finished!                            ";
             }
         }
 
-        for(auto i = 0; i < philosopher_id.size(); ++i) {
+        for (auto i = 0; i < philosopher_id.size(); ++i) {
             auto pos = i;
             auto y = 0;
             std::string row =
@@ -46,14 +45,14 @@ void Printer::start() {
         mvprintw(philosopher_id.size() + 1, 1, status.c_str());
         mvprintw(philosopher_id.size() + 3, 0, " ");
         refresh();
-        if(finished) std::this_thread::sleep_for(std::chrono::seconds(3));
+        if (finished) std::this_thread::sleep_for(std::chrono::seconds(3));
     }
 }
 
 void Printer::initTableInfo(
-        std::vector<std::string> id_str,
-        std::vector<std::string> status_str,
-        std::vector<std::string> progress_str,
+        std::vector <std::string> id_str,
+        std::vector <std::string> status_str,
+        std::vector <std::string> progress_str,
         std::vector<bool> is_finished) {
     philosopher_id = id_str;
     philosopher_status = status_str;

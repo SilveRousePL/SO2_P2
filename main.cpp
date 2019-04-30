@@ -5,12 +5,10 @@
 #include <iostream>
 #include "Table.h"
 
-std::mutex ThreadSafePrinter::cout_mutex;
-
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[]) {
     srand(time(NULL));
     int num = 5;
-    if(argc >= 2) {
+    if (argc >= 2) {
         try {
             num = (uint) std::stoi(argv[1]);
             if (num <= 1) {
@@ -26,5 +24,5 @@ int main(int argc, char* argv[]) {
 
     Table table(num);
     table.start();
-    std::cout << "Main Finished!" << std::endl;
+    return 0;
 }

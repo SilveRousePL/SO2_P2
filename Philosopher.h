@@ -11,7 +11,7 @@
 #include "Printer.h"
 
 class Philosopher {
-    enum Status{
+    enum Status {
         THINKING,
         EATING,
         REQUESTING,
@@ -19,35 +19,38 @@ class Philosopher {
     };
 
     int id;
-    Fork& left_fork;
-    Fork& right_fork;
+    Fork &left_fork;
+    Fork &right_fork;
     Status status = Status::THINKING;
-    TableChannel& channel;
+    TableChannel &channel;
     std::thread thread;
-    Printer& printer;
+    Printer &printer;
 
     int progress = 0;
     int counter = 0;
 
 public:
-    Philosopher(int id, Fork &left, Fork &right, TableChannel &table, Printer& printer);
-    Philosopher(Philosopher&& obj);
-    ~Philosopher();
+    Philosopher(int id, Fork &left, Fork &right, TableChannel &table, Printer &printer);
 
     void live();
 
-    int getId();
-    int getCounter();
     bool isFinished();
+
     std::string printPhilosopher();
+
     std::string printStatus();
+
     std::string printProgress();
 
 private:
     void think();
+
     void eat();
+
     void requestForks();
+
     void freeForks();
+
     void wait(uint from, uint to);
 
     void setStatus(Status st);

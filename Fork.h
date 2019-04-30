@@ -6,6 +6,7 @@
 #define SO2_P2_FORK_H
 
 #include <mutex>
+#include "Helper.h"
 
 class Fork {
     enum Status {
@@ -22,16 +23,19 @@ class Fork {
 
 public:
     Fork(int fork_id, int owner_id)
-        : id(fork_id), owner_id(owner_id) {}
-    Fork(const Fork& obj)
-        : id(obj.id), owner_id(obj.owner_id) {}
+            : id(fork_id), owner_id(owner_id) {}
+
+    Fork(const Fork &obj)
+            : id(obj.id), owner_id(obj.owner_id) {}
 
     void request(int philosopher_id) {
         while (owner_id != philosopher_id) {
             if (isDirty()) {
-                std::lock_guard<std::mutex> lock(mutex);
+                std::lock_guard <std::mutex> lock(mutex);
                 wash();
                 owner_id = philosopher_id;
+            } else {
+                std::this_thread::sleep_for(std::chrono::milliseconds(10));
             }
         }
     }
@@ -40,28 +44,17 @@ public:
         dirty();
     }
 
-    std::mutex& getMutex() {
+    std::mutex &getMutex() {
         return mutex;
     }
 
-    int getId() {
-        return id;
-    }
-
-    int getOwnerId() {
-        return owner_id;
-    }
-
     std::string printStatus() {
-        return "F:" + std::to_string(id) + " <= " + "P:" + std::to_string(owner_id) + " | " + (isDirty() ? std::string("Dirty") : std::string("Clean"));
+        return "F:" + std::to_string(id) + " <= " + "P:" + std::to_string(owner_id) + " | " +
+               (isDirty() ? std::string("Dirty") : std::string("Clean"));
     }
 
     bool isDirty() {
         return status == DIRTY ? true : false;
-    }
-
-    bool isClean() {
-        return status == CLEAN ? true : false;
     }
 
 private:

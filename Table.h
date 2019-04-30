@@ -10,8 +10,8 @@
 #include "Printer.h"
 
 class Table {
-    std::deque<Fork> fork;
-    std::deque<Philosopher> philosopher;
+    std::deque <Fork> fork;
+    std::deque <Philosopher> philosopher;
     size_t number;
     TableChannel channel;
     Printer printer;
@@ -19,16 +19,16 @@ class Table {
 public:
 
     Table(size_t number) : number(number), printer(channel) {
-        for(uint i{0}; i < number; ++i) {
-            fork.emplace_back(i, i % (number-1));
+        for (uint i{0}; i < number; ++i) {
+            fork.emplace_back(i, i % (number - 1));
         }
-        for(uint i{0}; i < number; ++i) {
-            philosopher.emplace_back(i, fork[i], fork[(i+1) % number], channel, printer);
+        for (uint i{0}; i < number; ++i) {
+            philosopher.emplace_back(i, fork[i], fork[(i + 1) % number], channel, printer);
         }
 
-        std::vector<std::string> id_str, status_str, progress_str;
+        std::vector <std::string> id_str, status_str, progress_str;
         std::vector<bool> is_finished;
-        for(auto & item : philosopher) {
+        for (auto &item : philosopher) {
             id_str.emplace_back(item.printPhilosopher());
             status_str.emplace_back(item.printStatus());
             progress_str.emplace_back(item.printProgress());
@@ -38,7 +38,7 @@ public:
     }
 
     void start() {
-        channel.coordinator.notifyAll();
+        channel.sync.notifyAll();
         printer.start();
     }
 };
